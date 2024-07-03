@@ -193,6 +193,8 @@ body {
 }
 
 .list-item__btn-done {
+  height: 2.4rem;
+  width: 2.4rem;
   outline: 2px solid var(--color-bg-icon);
   border-radius: 5px;
 }
