@@ -1,0 +1,252 @@
+:root {
+  --color-white: #f1f5f9;
+  --color-black: #020617;
+
+  --color-secondary: #ff1744;
+
+  --color-bg: #dcedc9;
+  --color-card: #e8f3db;
+  --color-outline: #a2cf6e;
+  --color-bg-icon: #aed580;
+  --color-text: #8bc34a;
+
+  --fs-input: 1.8rem;
+  --fs-text: 2.2rem;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+
+  --input-pd: 1.4rem 2rem;
+  --item-pd: 2rem 2.4rem;
+}
+
+:root[class='dark'] {
+  --color-white: #f8fafc;
+  --color-black: #0f172a;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-text);
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  align-content: center;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* general */
+.hidden {
+  display: none !important;
+}
+
+/* todo */
+.todo {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-size: 5.2rem;
+  letter-spacing: 3px;
+}
+
+/* .form */
+.todo__form {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.todo__form-input {
+  font-family: inherit;
+  font-size: var(--fs-input);
+  font-weight: var(--fw-semibold);
+  color: inherit;
+  letter-spacing: 1px;
+  width: 100%;
+  padding: var(--input-pd);
+  border: none;
+  border-radius: 5px;
+}
+
+.todo__form-input::placeholder {
+  color: #cfd8dc;
+}
+
+.todo__form-input:focus {
+  outline: 2px solid var(--color-outline);
+}
+
+.todo__form-enter {
+  background-color: var(--color-bg-icon);
+  height: 100%;
+  width: 5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  transition: all 0.2s;
+}
+
+.todo__form-enter:active {
+  background-color: var(--color-outline);
+}
+
+/* list */
+.todo__list {
+  font-size: var(--fs-input);
+  font-weight: var(--fw-semibold);
+  background-color: var(--color-card);
+  height: 40rem;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.todo__list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo__list::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+.todo__list::-webkit-scrollbar-thumb {
+  background-color: var(--color-text);
+}
+
+.todo__list-empty {
+  font-size: 2.4rem;
+  height: 100%;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* list item */
+.list-item {
+  font-size: var(--fs-text);
+  list-style: none;
+  padding: var(--item-pd);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  position: relative;
+}
+
+.list-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 1px;
+  background-color: var(--color-text);
+}
+
+.list-item__detail {
+  letter-spacing: 1px;
+}
+
+.list-item__btn {
+  border: none;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.list-item__btn-done {
+  outline: 2px solid var(--color-bg-icon);
+  border-radius: 5px;
+}
+
+.list-item__btn-delete {
+  margin-left: auto;
+}
+
+/* option */
+.list__option {
+  font-size: var(--fs-input);
+
+  background-color: var(--color-card);
+  padding: var(--item-pd);
+  border-radius: 10px;
+  margin-top: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.list__filter {
+  display: flex;
+  gap: 1rem;
+}
+
+.list__filter-btn {
+  font-size: var(--fs-input);
+  font-weight: var(--fw-semibold);
+  color: inherit;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.list__filter-btn:hover {
+  color: var(--color-black);
+}
+
+.list__filter-btn-focus {
+  color: var(--color-secondary);
+}
+
+.list__clear {
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.list__clear:hover {
+  color: var(--color-secondary);
+}

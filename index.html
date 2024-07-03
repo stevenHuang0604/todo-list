@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div class="todo">
+      <header class="header">
+        <h1 class="heading">Todo List</h1>
+      </header>
+
+      <form class="todo__form">
+        <input class="todo__form-input" type="text" placeholder="add ToDo..." />
+        <div class="todo__form-enter">
+          <img src="./images/keyboard_return.svg" alt="enter icon" />
+        </div>
+      </form>
+
+      <nav class="todo__list">
+        <p class="todo__list-empty">
+          <span> List is empty now !</span>
+          <img src="./images/sentiment_dissatisfied.svg" alt="sad icon" />
+        </p>
+        <!-- <li class="list-item">
+          <button class="list-item__btn list-item__btn-done">
+            <img src="./images/check.svg" alt="check icon" />
+          </button>
+          <p class="list-item__detail">list item detail</p>
+          <button class="list-item__btn list-item__btn-delete">
+            <img src="./images/delete.svg" alt="delete icon" />
+          </button>
+        </li> -->
+      </nav>
+
+      <div class="list__option">
+        <div class="list__qty">0 item left</div>
+        <div class="list__filter">
+          <button class="list__filter-btn list__filter-btn--all list__filter-btn-focus">All</button>
+          <button class="list__filter-btn list__filter-btn--active">Active</button>
+          <button class="list__filter-btn list__filter-btn--done">Done</button>
+        </div>
+        <button class="list__clear">Clear list</button>
+      </div>
+    </div>
+  </body>
+</html>
