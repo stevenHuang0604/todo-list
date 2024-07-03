@@ -3,6 +3,7 @@ const inputBtn = document.querySelector('.todo__form-enter');
 
 const listContainer = document.querySelector('.todo__list');
 
+const listQty = document.querySelector('.list__qty');
 const filter = document.querySelector('.list__filter');
 const filterAll = document.querySelector('.list__filter-btn--all');
 const filterActive = document.querySelector('.list__filter-btn--active');
@@ -44,6 +45,8 @@ const renderList = (list) => {
       );
     });
   }
+
+  listQty.textContent = `${list.filter((item) => !item.done).length} items left`;
 };
 
 const itemDone = (e) => {
