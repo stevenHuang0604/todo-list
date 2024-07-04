@@ -10,10 +10,13 @@ const filterActive = document.querySelector('.list__filter-btn--active');
 const filterDone = document.querySelector('.list__filter-btn--done');
 const clearList = document.querySelector('.list__clear');
 
-const todoList = [];
-let id = 1;
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
+let id = JSON.parse(localStorage.getItem('id')) || 1;
 
 const renderList = (list) => {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
+  localStorage.setItem('id', JSON.stringify(id));
+
   listContainer.innerHTML = '';
 
   if (list.length === 0) {
@@ -130,3 +133,9 @@ listContainer.addEventListener('click', itemDelete);
 
 filter.addEventListener('click', filterSelect);
 clearList.addEventListener('click', listClear);
+
+const init = () => {
+  renderList(todoList);
+};
+
+init();
