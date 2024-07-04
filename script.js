@@ -27,7 +27,7 @@ const renderList = (list) => {
           <span> List is empty now !</span>
           <img src="./images/sentiment_dissatisfied.svg" alt="sad icon" />
          </p>
-        `
+        `,
     );
   } else {
     list.forEach((item) => {
@@ -44,7 +44,7 @@ const renderList = (list) => {
             <img src="./images/delete.svg" alt="delete icon" />
           </button>
         </li>
-        `
+        `,
       );
     });
   }
